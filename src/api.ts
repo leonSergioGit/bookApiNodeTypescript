@@ -1,6 +1,7 @@
 import express, { Application, Request, Response, NextFunction } from 'express';
 import dotenv from 'dotenv';
 import path from 'path';
+import cors from 'cors'
 import connectDB from './config/db';
 import books from './routes/books';
 
@@ -11,6 +12,7 @@ connectDB();
 
 const api = express();
 
+api.use(cors())
 api.use(express.json());
 
 const PORT = process.env.PORT || 5000;
