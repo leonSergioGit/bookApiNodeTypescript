@@ -1,6 +1,6 @@
 import express, { Application, Request, Response, NextFunction } from 'express';
 import Book from '../models/Book';
-import { getAllBooks, addBook, deleteBook } from '../controllers/books';
+import { getAllBooks, addBook, deleteBook, editBook  } from '../controllers/books';
 
 
 const api = express();
@@ -15,6 +15,7 @@ router
 router
     .route('/:id')
     .delete(deleteBook)
+    .put(editBook)
 
 
 
