@@ -16,6 +16,11 @@ const BookSchema = new mongoose.Schema({
     isFinished: {
         type: String,
         required: true
+    },
+    date: {
+        type: Date,
+        required: true,
+        default: Date.now()
     }
 })
 
